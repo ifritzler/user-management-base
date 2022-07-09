@@ -1,3 +1,4 @@
+import userJWTDTO from '#Validations/user/user-jwt.dto.js';
 import userLoginDTO from '#Validations/user/user-login.dto.js';
 import userRegisterDTO from '#Validations/user/user-register.dto.js';
 import userUnRegisterDTO from '#Validations/user/user-unregister.dto.js';
@@ -10,10 +11,10 @@ const userRouter = Router();
 
 userRouter.post('/register', userRegisterDTO);
 userRouter.post('/login', userLoginDTO);
-userRouter.get('/profile');
-userRouter.patch('/update-data', userUpdateDataDTO);
-userRouter.patch('/update-email', userUpdateEmailDTO);
-userRouter.patch('/update-password', userUpdatePasswordDTO);
-userRouter.delete('/unregister', userUnRegisterDTO);
+userRouter.get('/profile', userJWTDTO);
+userRouter.patch('/update-data', userJWTDTO,userUpdateDataDTO);
+userRouter.patch('/update-email', userJWTDTO,userUpdateEmailDTO);
+userRouter.patch('/update-password', userJWTDTO,userUpdatePasswordDTO);
+userRouter.delete('/unregister', userJWTDTO,userUnRegisterDTO);
 
 export default userRouter;
