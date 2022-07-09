@@ -15,7 +15,7 @@
 </div>
 
 <div align="center">
-  <h1>Node.JS Template</h1>
+  <h1>User Management Template with NodeJS and Mongoose</h1>
   <p>
     Template for the projects developed in the Node.JS course of the LearnThis Academy elearning platform.
     <br />
@@ -49,10 +49,6 @@ A number of tools have been added to improve the development experience and prov
 
 ## Usage
 
-```
-👍 Click on USE THIS TEMPLATE button 👍
-```
-
 In this way you will create your project based on the following template
 
 After creating the repository and cloning it locally
@@ -60,6 +56,15 @@ After creating the repository and cloning it locally
 ```
 npm i
 ```
+
+We describe the following folders architecture: 
+ - src : main folder
+   - dto : validations for my routes
+   - routes : the api express routes
+   - schemas : models for mongodb
+   - controllers : core functionality
+   - config : enviroment rules and other configurations
+   
 
 <!-- LICENSE -->
 
