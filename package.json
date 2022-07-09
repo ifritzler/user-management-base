@@ -16,6 +16,10 @@
         "url": "https://github.com/ifritzler"
     },
     "license": "MIT",
+    "dependencies": {
+        "express": "^4.18.1",
+        "mongoose": "^6.4.4"
+    },
     "devDependencies": {
         "eslint": "8.18.0",
         "eslint-config-prettier": "8.5.0",
@@ -29,7 +33,11 @@
         "prettier": "2.7.1"
     },
     "imports": {
-        "#Lib/*": "./src/lib/*"
+        "#Config/*": "./src/config/*",
+        "#Controllers/*": "./src/controllers/*",
+        "#Validations/*": "./src/validations/*",
+        "#Schemas/*": "./src/schemas/*",
+        "#Routes/*": "./src/routes/*"
     },
     "lint-staged": {
         "*.js": "eslint --fix",
