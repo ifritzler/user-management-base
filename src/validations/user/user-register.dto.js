@@ -8,7 +8,7 @@ import {
     nameDTOSchema,
     passwordDTOSchema,
     surnameDTOSchema,
-} from '#Lib/dto-types.js';
+} from '#Validations/dto-types.js';
 
 const RegisterDTOSchema = Type.Object(
     {
