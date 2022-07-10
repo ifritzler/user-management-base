@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox';
 import Ajv from 'ajv';
 import addErrors from 'ajv-errors';
-import { passwordDTOSchema } from '#Validations/dto-types.js';
+import { passwordDTOSchema } from './field-schemas.js';
 
 const UnRegisterDTOSchema = Type.Object(
     {

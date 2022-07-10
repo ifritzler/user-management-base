@@ -1,7 +1,7 @@
 import { Type } from '@sinclair/typebox';
 import Ajv from 'ajv';
 import addErrors from 'ajv-errors';
-import { nameDTOSchema, surnameDTOSchema } from '#Validations/dto-types.js';
+import { nameDTOSchema, surnameDTOSchema } from './field-schemas.js';
 
 const UpdateDataDTOSchema = Type.Object(
     {

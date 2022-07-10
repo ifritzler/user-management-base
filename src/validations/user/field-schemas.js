@@ -44,3 +44,15 @@ export const passwordDTOSchema = Type.String({
             'La contraseña debe tener como maximo 25 caracteres de longitud',
     },
 });
+
+export const passwordLoginDTOSchema = Type.String({
+    format: 'password',
+    minLength: 10,
+    maxLength: 25,
+    errorMessage: {
+        type: 'Credenciales Incorrectas',
+        format: 'Credenciales Incorrectas',
+        minLength: 'Credenciales Incorrectas',
+        maxLength: 'Credenciales Incorrectas',
+    },
+});

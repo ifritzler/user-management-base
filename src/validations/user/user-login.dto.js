@@ -2,12 +2,15 @@ import { Type } from '@sinclair/typebox';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import addErrors from 'ajv-errors';
-import { emailDTOSchema, passwordDTOSchema } from '#Validations/dto-types.js';
+import {
+    emailDTOSchema,
+    passwordLoginDTOSchema,
+} from './field-schemas.js';
 
 const LoginDTOSchema = Type.Object(
     {
         email: emailDTOSchema,
-        password: passwordDTOSchema,
+        password: passwordLoginDTOSchema,
     },
     {
         additionalProperties: false,
@@ -32,14 +35,7 @@ const userLoginDTO = (req, res, next) => {
     const isDTOValid = validateSchema(req.body);
 
     if (!isDTOValid) {
-        const errors = {
-            errors: validateSchema.errors.map((e) => {
-                return {
-                    field: e.instancePath.split('/')[1],
-                    errorMessage: e.message,
-                };
-            }),
-        };
+        const errors = { errors: validateSchema.errors.map((e) => e.message) };
         // Example response
         // {
         //     "errors": [
